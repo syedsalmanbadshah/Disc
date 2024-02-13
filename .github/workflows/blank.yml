@@ -13,12 +13,10 @@ jobs:
       env:
         GITLAB_SSH_PRIVATE_KEY: ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
       run: |
-        # Setup SSH key
         mkdir -p ~/.ssh
-        echo "$GITLAB_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        echo "${{ secrets.GITLAB_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H gitlab.ideatolife.me >> ~/.ssh/known_hosts
-
         
         # Push to GitLab
         git remote add gitlab git@gitlab.ideatolife.me:disc/github-test.git
