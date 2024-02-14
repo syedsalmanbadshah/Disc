@@ -19,7 +19,7 @@ jobs:
         ssh-keyscan -H gitlab.ideatolife.me >> ~/.ssh/known_hosts
         
         # Configure Git
-        git config --global user.email "syed.salman@ideatolife.me
+        git config --global user.email "syed.salman@ideatolife.me"
         git config --global user.name "syed.salman"
 
         # Push to GitLab
