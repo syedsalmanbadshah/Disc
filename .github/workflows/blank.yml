@@ -1,6 +1,6 @@
 name: Mirror to GitLab
 
-on: [push, create]
+on: [push, delete, create]
 
 jobs:
   mirror:
