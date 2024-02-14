@@ -19,5 +19,5 @@ jobs:
         ssh-keyscan -H gitlab.ideatolife.me >> ~/.ssh/known_hosts
         
         # Push to GitLab
-        git remote add gitlab git@gitlab.ideatolife.me:disc/github-test.git
+        git remote add gitlab git@gitlab.ideatolife.me:syed.salman/disc-frontend.git
         git push --mirror gitlab
