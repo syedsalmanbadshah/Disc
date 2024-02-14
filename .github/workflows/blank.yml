@@ -24,7 +24,8 @@ jobs:
 
         # Push to GitLab
         git remote add gitlab git@gitlab.ideatolife.me:syed.salman/disc-frontend.git
-        git push --force-with-lease gitlab --all
-        git push --force-with-lease gitlab --tags
+        git push gitlab --all --force
+        git push gitlab --tags --force
+
    
 
