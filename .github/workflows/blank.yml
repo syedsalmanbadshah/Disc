@@ -13,13 +13,17 @@ jobs:
       env:
         GITLAB_SSH_PRIVATE_KEY: ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
       run: |
-        Authorization: token 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
         mkdir -p ~/.ssh
         echo "${{ secrets.GITLAB_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H gitlab.ideatolife.me >> ~/.ssh/known_hosts
         
+        # Configure Git
+        git config --global user.email "syed.salman@ideatolife.me
+        git config --global user.name "syed.salman"
+
         # Push to GitLab
         git remote add gitlab git@gitlab.ideatolife.me:syed.salman/disc-frontend.git
-        git push --force-with-lease
-       
+        git push --force-with-lease gitlab --all
+        git push --force-with-lease gitlab --tags
+
